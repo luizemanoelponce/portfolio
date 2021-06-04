@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Projetos;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,13 +22,13 @@ Route::get('/contato', function () {
     return view('contato');
 })->name('contato');
 
-Route::get('/projetos', function () {
-    return view('home'); 
-})->name('projetos');
+Route::get('/projetos', [Projetos::class, 'exibeProjetos'])->name('projetos');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/cadadatro/projeto', function () {
+    return view('cadastroprojeto');
+})->middleware(['auth'])->name('cadastro-projeto');
+
+Route::get('/cadadatra/projeto', [Projetos::class, 'registraProjeto'])->middleware(['auth'])->name('cadastra-projeto');
 
 
 

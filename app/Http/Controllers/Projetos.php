@@ -23,6 +23,14 @@ class Projetos extends Controller
     {
 
         $projetos = Projeto::All();
+        
+        if(!$projetos[0]->id){
+            $projetos = null;
+        }
+
+        return view('projetos', [
+            'projetos' => $projetos,
+            ]);
 
     }
     public function exibeProjeto($id)

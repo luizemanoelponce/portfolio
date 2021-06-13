@@ -4,40 +4,37 @@
 
 @section('conteudo')
 
-    <h1 id="h1projts">Meus Projetos:</h1>
+    <main id="projeto">
 
-    <main id="projetos">
-
-        @foreach( $projetos as $projeto)
+        @if( $projeto )
 
             <section>
 
-                <div id="img_projetos">
+                <h1>{{ $projeto->nome }}</h1>
+
+                <div id="img_projeto">
                     <img src="{{ $projeto->imagem }}" alt="">
                 </div>
-
                 <div>
 
-                    <h2>{{ $projeto->nome }}</h2>
-
-                    <div id="descricao">
+                    <article>
                         <?php echo $projeto->descricao; ?>
-                    </div>
+                    </article>
                     
-                    <div id="link_aplicacao">
-
+                    <div id="link_aplicacao_pg_projeto">
                         <a href="{{ $projeto->link_da_aplicacao }}" target="__blank">Ir para o projeto</a>
-                        <a href="projeto/{{ $projeto->id }}" target="__blank">Mais detalhes</a>
-
+                        <a href="{{ $projeto->github }}" target="__blank">Ir para o github</a>
                     </div>
                     
                 </div>
-                
-                
                 
             </section>
 
-        @endforeach
+        @else
+
+            <h3>nenhum projeto cadastrado</h3>
+
+        @endif
 
     </main>
 

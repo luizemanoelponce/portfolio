@@ -4,7 +4,7 @@
 
 @section('conteudo')
 
-    <main class="content" id="contato">
+    <main id="contato">
 
         <section>
 

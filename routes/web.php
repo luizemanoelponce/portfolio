@@ -24,11 +24,14 @@ Route::get('/contato', function () {
 
 Route::get('/projetos', [Projetos::class, 'exibeProjetos'])->name('projetos');
 
-Route::get('/cadadatro/projeto', function () {
+Route::get('/projeto/{id}/', [Projetos::class, 'exibeProjeto'])->name('projeto');
+
+
+Route::get('/cadastro/projeto', function () {
     return view('cadastroprojeto');
 })->middleware(['auth'])->name('cadastro-projeto');
 
-Route::get('/cadadatra/projeto', [Projetos::class, 'registraProjeto'])->middleware(['auth'])->name('cadastra-projeto');
+Route::post('/cadastro/projeto', [Projetos::class, 'registraProjeto'])->middleware(['auth'])->name('cadastra-projeto');
 
 
 

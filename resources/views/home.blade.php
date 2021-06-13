@@ -4,7 +4,7 @@
 
 @section('conteudo')
 
-    <main class="content" id="home">
+    <main  id="home">
 
         <section>
 
@@ -12,7 +12,7 @@
             <div>
                 <small>Olá, meu nome é</small>
                 <h1>Luiz Emanoel</h1>
-                <h2>Eu crio soluções para web</h2>
+                <h2>Eu crio coisas para web</h2>
             </div>
 
         </section>

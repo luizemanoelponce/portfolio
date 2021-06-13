@@ -57,12 +57,7 @@ footer{
     justify-content: center;
     background-color: rgb(194, 194, 194);
 }
-.content{
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    overflow: hidden;
-}
+
 #home{
     flex-direction: column;
     justify-content: center;
@@ -70,6 +65,7 @@ footer{
     background-color:#3b44bb;
     letter-spacing: 5px;
     color: white;
+    padding-top: 60px;
 }
 
 #home > section{
@@ -101,12 +97,12 @@ footer{
 }
 
 #home > section > div > h2{
-
     font-size: 1.25rem;
 }
 
 #home > section:nth-child(2) > div {
     padding-left: 10%;
+    display: flex;
 }
 
 #home > section:nth-child(2) > div > p{
@@ -133,6 +129,7 @@ footer{
 }
 
 #contato{
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -145,7 +142,7 @@ footer{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgb(196, 194, 194);;
+    border: 1px solid rgb(196, 194, 194);
     border-radius: 15px;
     text-align: center;
     background-color: white;
@@ -174,9 +171,112 @@ footer{
 
 #projetos{
     padding-top: 20px;
+    padding-right: 20px;
     display: grid;
-    grid-template-columns: auto;
-    background-color: rgb(221, 221, 221);
+    grid-template-columns: auto auto auto;
+    align-items: stretch;
+    background-color: white;
+}
+
+#h1projts{
+    padding-top: 30px;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    
+}
+
+#projetos > section{
+    width: 350px;
+
+    margin: 5px 0 10px 0;
+    padding-bottom: 15px;
+    border: 1px solid rgb(196, 194, 194);
+    border-radius: 8px;
+}
+
+#img_projetos{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 36px;
+}
+
+#img_projetos > img{
+    width: 75%;
+    
+}
+
+#projetos > section > div:last-child {
+    height: 100%;
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#projetos > section > div:last-child > h2 {
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+
+#projetos > section > div:last-child > div:last-child{
+    width: 100%;
+}
+
+#descricao{
+    display: block;
+    width: 300px;
+    height: 145px;
+    font-size: 16px;
+    word-wrap:  normal;
+
+    overflow: hidden;
+    text-overflow: clip;
+
+    letter-spacing: 2.5px;
+    line-height: 25px;
+    color:rgb(15, 15, 15)
+}
+
+#projeto{
+    padding-top: 20px;
+    padding-left: 60px;
+    background-color: white;
+}
+
+#projeto> section > h1{
+    margin-bottom: 15px;
+    
+}
+
+#projeto > section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 70px;
+    padding-right: 60px;
+}
+
+#projeto > section > div:last-child > article{
+    letter-spacing: 2.5px;
+    line-height: 25px;
+    color:rgb(15, 15, 15)
+}
+
+#img_projeto{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 20px 10px;
+}
+
+#img_projeto > img{
+    width: 98%;
 }
 
 #cadastro-projeto{
@@ -184,6 +284,37 @@ footer{
     display: flex;
     flex-direction: column;
     background-color: white;
+}
+
+#link_aplicacao{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+
+#link_aplicacao > a{
+    text-decoration: none;
+    color: black;
+}
+#link_aplicacao > a:hover{
+    color: rgb(43, 43, 43);
+}
+
+#link_aplicacao_pg_projeto{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+
+#link_aplicacao_pg_projeto > a{
+    text-decoration: none;
+    color: black;
+    margin-left: 30px;
+}
+#link_aplicacao_pg_projeto > a:hover{
+    color: rgb(43, 43, 43);
 }
 
 #editor{
@@ -197,14 +328,20 @@ footer{
 * css para mobile
 *
 */
+@media (max-width: 1250px){
+
+    #projetos{
+        grid-template-columns: auto auto;
+    }
+
+}
 
 @media (max-width: 900px){
-    .content{
-        height: 100%;
-        padding-top: 7px;
-    }
+
     main{
+        height : 100%;
         padding: 0 0 62px 0;
+        overflow: scroll;
     }
 
     nav{
@@ -230,8 +367,58 @@ footer{
         background-color: white;
         box-shadow: 0 0 1rem black;
     }
-    
+
+    #projetos{
+        grid-template-columns: auto;
+        display: grid;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    #img_projeto{
+        width: 90%;
+    }
+
     #home{
-        padding-top: 80px;
+        height: 100%;
+        padding-top: 20px;
+    }
+    
+    #home > section{
+        flex-direction: column;
+        margin-bottom: 0px;
+    }
+    
+    #home > section:first-child > div:first-child{
+        margin: 0;
+    }
+    
+    #home > section:first-child > div:last-child{
+        text-align: center;
+        padding: 20px 0 20px 0;
+    }
+    #home > section > div > img{
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+    }
+    
+    #home > section:nth-child(2) > div {
+        margin: 30px 0 30px 0;
+        padding: 0 5px 0 5px;
+    }
+    
+    #home > section:nth-child(2) > div > p{
+        text-align: center;
+        width: 100%;
+    }
+
+    #home > section:last-child {
+        padding: 0;
+    }
+    #home > section:last-child > a{
+        margin: 5px;
     }
 }

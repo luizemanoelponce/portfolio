@@ -10,33 +10,37 @@ class Projetos extends Controller
     public function registraProjeto(Request $request)
     {
 
+        $descricao =  preg_replace("/(\\r)?\\n/i", "<br/>", $request->descricao);
+
         $projeto = Projeto::create([
             'nome' => $request->nome,
-            'descricao' => $request->descricao,
+            'descricao' => $descricao,
             'link_da_aplicacao' => $request->link_da_aplicacao,
             'github' => $request->github,
             'imagem' => $request->imagem
-            ]);
+        ]);
+
+        return redirect()->route('cadastro-projeto');
     }
 
     public function exibeProjetos()
     {
 
         $projetos = Projeto::All();
-        
-        if(!$projetos[0]->id){
-            $projetos = null;
-        }
 
         return view('projetos', [
             'projetos' => $projetos,
-            ]);
+        ]);
 
     }
     public function exibeProjeto($id)
     {
 
         $projeto = Projeto::find($id);
+
+        return view('projeto', [
+            'projeto' => $projeto,
+        ]);
 
     }
 
@@ -57,7 +61,7 @@ class Projetos extends Controller
             'link_da_aplicacao' => $request->link_da_aplicacao,
             'github' => $request->github,
             'imagem' => $request->imagem
-            ]);
+        ]);
     }
 
     public function deletaProjeto($id)
